@@ -1,0 +1,214 @@
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+*,
+*:hover,
+*:active{
+	outline: none;
+}
+
+button,
+button:active {
+    border-style: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    color: #646c77;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 150px 150px 165px;
+    @media screen and (max-width: 1200px) {
+        max-width: 930px;
+        padding: 30px 15px 50px 15px;
+    }
+}
+
+.main__title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 53px 0;
+}
+
+.subscriptions {
+    margin-left: 3px;
+}
+
+.subscriptions,
+.activ__subscriptions {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.table {
+    margin-top: 25px;
+    .table__head {
+        padding: 17px 0 17px 25px;
+        background-color: #f4f6f9;
+        border-radius: 2px 2px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media screen and (max-width: 576px) {
+            padding: 17px 0 17px 5px;
+        }
+        .table__task_condition {
+            max-width: 350px;
+            flex-basis: 100%;
+            @media screen and (max-width: 768px) {
+                max-width: 170px;
+            }
+            @media screen and (max-width: 576px) {
+                max-width: 142px;
+            }
+        }
+    }
+}
+
+.table__task {
+    padding: 20px 0 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #cbd0d8;
+    .table__task_name {
+        max-width: 500px;
+        padding-left: 25px;
+        padding-right: 10px;
+        flex-basis: 100%;
+        @media screen and (max-width: 576px) {
+            padding-left: 5px;
+        }
+        .subtitle {
+            font-weight: 700;
+            @media screen and (max-width: 576px) {
+                display: block;
+            }
+        }
+    }
+    .table__task_condition,
+    .table__task_del {
+        margin-left: 50px;
+        max-width: 150px;
+        flex-basis: 100%;
+        @media screen and (max-width: 768px) {
+            margin-left: 10px;
+            max-width: 80px;
+        }
+        @media screen and (max-width: 576px) {
+            margin-left: 5px;
+        }
+    }
+
+    .table__task_condition {
+        @media screen and (max-width: 576px) {
+            max-width: 60px;
+        }
+    }
+
+    .table__task_del {
+        text-align: center;
+    }
+}
+
+.checkbox {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    .text {
+        @media screen and (max-width: 768px) {
+            position: absolute;
+            top: 25px;
+            left: -12%;
+        }
+    }
+    .text-active {
+        display: block;
+        font-weight: 700;
+    }
+    .text-noactive {
+        display: none;
+    }
+    input {
+        display: none;
+        &:checked + .box {
+            background-color: #a9b1bc;
+        }
+        &:checked + .box::after {
+            left: 26px;
+        }
+        &:checked ~ .text-noactive {
+            display: block;
+        }
+        &:checked ~ .text-active {
+            display: none;
+        }
+    }
+    .box {
+        display: block;
+        width: 48px;
+        height: 24px;
+        background-color: #9ed36a;
+        border-radius: 10px;
+        margin-right: 13px;
+        transition: background-color 0.2s ease-in;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: left 0.2s ease-in;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    color: #e8563f;
+    padding: 5px 20px;
+    border: 1px solid #e8563f;
+    border-radius: 3px;
+    transition: all 0.25s ease-in;
+    cursor: pointer;
+    @media screen and (max-width: 768px) {
+        padding: 5px;
+    }
+    &:hover {
+        background-color: #e8563f;
+        color: #fff;
+        border-color: #fff;
+    }
+}
